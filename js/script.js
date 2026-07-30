@@ -17,3 +17,14 @@ async function saveData() {
     document.getElementById("result").textContent =
         data.message;
 }
+
+
+async function loadText() {
+
+    const response = await fetch("/.netlify/functions/getText");
+
+    const data = await response.json();
+
+    document.getElementById("result").textContent = data.text;
+
+}
